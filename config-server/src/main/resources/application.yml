@@ -1,0 +1,30 @@
+# server:
+#   port: 8888
+
+# spring:
+#   cloud:
+#     config:
+#       server:
+#         git:
+#           # point to your local git repo path or remote URL
+#           uri: D:\work\spring-config\config-repo
+#           # or: uri: https://github.com/your-org/config-repo
+#           search-paths: ''
+#           # default-label: main   # if you use branches
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: health,info,env,configprops,loggers,refresh
+
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///D:/work/spring-config/config-repo

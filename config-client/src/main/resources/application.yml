@@ -1,0 +1,50 @@
+# spring:
+#   application:
+#     name: myapp
+#   profiles:
+#     active: development
+#   config:
+#     import: "optional:configserver:http://localhost:8888"   # modern way
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: health,info,env,refresh   # include refresh for manual testing
+# server:
+#   port: 8080
+
+# spring:
+#   application:
+#     name: myapp
+#   profiles:
+#     active: development
+#   config:
+#     import: "optional:configserver:http://localhost:8888"
+
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: health,info,env,refresh
+
+# server:
+#   port: 8080
+
+spring:
+  application:
+    name: config-client
+  profiles:
+    active: development
+  config:
+    import: optional:configserver:http://localhost:8888  # ✅ correct indentation & syntax
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,refresh
+
+server:
+  port: 8080
+
+
